@@ -85,3 +85,14 @@ function carregarEstado() {
   }
 }
 
+function reiniciarJogo() {
+  localStorage.clear();
+  gorilaVida = 100;
+  humanos = Array(100).fill(true);
+  humanosRestantes = 100;
+  atualizarStatus();
+  renderizarHumanos();
+  document.querySelectorAll("button").forEach(btn => btn.disabled = false);
+  log("Jogo reiniciado!");
+}
+
