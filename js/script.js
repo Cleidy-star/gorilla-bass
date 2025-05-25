@@ -43,3 +43,19 @@ function curar() {
   atualizarStatus();
   salvarEstado();
 }
+
+function renderizarHumanos() {
+  const container = document.getElementById("humanos");
+  const base = document.getElementById("humanoMolde");
+  container.innerHTML = '';
+  container.appendChild(base);
+
+  for (let i = 0; i < humanos.length; i++) {
+    const novo = base.cloneNode();
+    novo.removeAttribute("id");
+    novo.style.display = "inline";
+    if (!humanos[i]) novo.classList.add("morto");
+    container.appendChild(novo);
+  }
+}
+
