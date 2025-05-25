@@ -74,3 +74,14 @@ function salvarEstado() {
   localStorage.setItem("gorilaVida", gorilaVida);
   localStorage.setItem("humanos", JSON.stringify(humanos));
 }
+
+function carregarEstado() {
+  const vida = localStorage.getItem("gorilaVida");
+  const humanosSalvos = localStorage.getItem("humanos");
+  if (vida) gorilaVida = parseInt(vida);
+  if (humanosSalvos) {
+    humanos = JSON.parse(humanosSalvos);
+    humanosRestantes = humanos.filter(h => h).length;
+  }
+}
+
