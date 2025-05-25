@@ -96,3 +96,25 @@ function reiniciarJogo() {
   log("Jogo reiniciado!");
 }
 
+function iniciarAtaquesHumanos() {
+  setInterval(() => {
+    if (humanosRestantes > 0 && gorilaVida > 0) {
+      const dano = Math.floor(Math.random() * 5);
+      gorilaVida = Math.max(0, gorilaVida - dano);
+      log(`Humanos causaram ${dano} de dano no gorila!`);
+      atualizarStatus();
+      salvarEstado();
+      verificarFimDeJogo();
+    }
+  }, 3000);
+}
+
+function atirarVariasBalas() {
+  const quantidade = Math.floor(Math.random() * 3) + 2; // entre 2 e 4 balas
+
+  for (let i = 0; i < quantidade; i++) {
+    setTimeout(() => {
+      atirarBala();
+    }, i * 300); 
+  }
+}
