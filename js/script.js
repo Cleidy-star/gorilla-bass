@@ -25,6 +25,11 @@ function atacar() {
   let alvos = 5;
   let ataques = 0;
   for (let i = 0; i < humanos.length && ataques < alvos; i++) {
+    if (humanos[i]) {
+      humanos[i] = false;
+      ataques++;
+      log(`Gorila atacou o humano #${i + 1}`);
+    }
   }
   humanosRestantes -= ataques;
   atualizarStatus();
@@ -122,6 +127,7 @@ function atirarBala() {
   setTimeout(() => {
     bala.style.transform = "translateX(-1010px)";
   }, 50);
+
   setTimeout(() => {
     bala.style.opacity = "0";
   }, 1200);

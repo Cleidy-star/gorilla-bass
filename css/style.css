@@ -7,3 +7,73 @@ body {
 h1{
   font-size: 70px;
 }
+
+nav{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+.gorila,
+.humano {
+  margin: 0;
+  font-size: 20px;
+}
+
+.batalha {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 30px;
+  align-items: flex-start;
+
+}
+.bala {
+  width: 5px;
+  height: 5px;
+  background-color: black;
+  border-radius: 50%;
+  position:absolute;
+  transition: transform 1s linear, opacity 1s ease;
+  opacity: 1;
+  z-index: 999;
+}
+
+#gorila {
+  width: 400px;
+  height: auto;
+}
+
+#humanos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  width: 600px; 
+  justify-content: start;
+  margin-top: 50px;
+}
+
+#humanos img {
+  width: 40px;
+  height: 30px;
+} 
+
+#humanos img.morto {
+  opacity: 0.4;
+}
+
+button {
+  margin: 10px;
+  padding: 10px 20px;
+}
+
+.log {
+  margin-top: 20px;
+  max-height: 200px;
+  overflow-y: auto;
+  border: 1px solid #aaa;
+  padding: 10px;
+  background: #fff;
+}
