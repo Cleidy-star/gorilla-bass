@@ -7,6 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
   renderizarHumanos();
   atualizarStatus();
   iniciarAtaquesHumanos();
+
   setInterval(() => {
     if (humanosRestantes > 0 && gorilaVida > 0) {
       atirarVariasBalas();
@@ -19,3 +20,26 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }, 3000);
 });
+
+function atacar() {
+  let alvos = 5;
+  let ataques = 0;
+  for (let i = 0; i < humanos.length && ataques < alvos; i++) {
+  }
+  humanosRestantes -= ataques;
+  atualizarStatus();
+  salvarEstado();
+  renderizarHumanos();
+  verificarFimDeJogo();
+}
+
+function defender() {
+  log("Gorila está em posição de defesa!");
+}
+
+function curar() {
+  gorilaVida = Math.min(100, gorilaVida + 10);
+  log("Gorila recuperou 10 pontos de vida!");
+  atualizarStatus();
+  salvarEstado();
+}
