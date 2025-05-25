@@ -109,6 +109,27 @@ function iniciarAtaquesHumanos() {
   }, 3000);
 }
 
+function atirarBala() {
+  const bala = document.createElement("div");
+  bala.classList.add("bala");
+
+  const top = Math.floor(Math.random() * window.innerHeight * 0.4) + 300;
+  bala.style.top = `${top}px`;
+  bala.style.left = `${window.innerWidth - 100}px`;
+  bala.style.left = "88%"; 
+  document.body.appendChild(bala);
+
+  setTimeout(() => {
+    bala.style.transform = "translateX(-1010px)";
+  }, 50);
+  setTimeout(() => {
+    bala.style.opacity = "0";
+  }, 1200);
+    setTimeout(() => {
+    bala.remove();
+  }, 2000);
+}
+
 function atirarVariasBalas() {
   const quantidade = Math.floor(Math.random() * 3) + 2; // entre 2 e 4 balas
 
