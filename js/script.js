@@ -59,3 +59,18 @@ function renderizarHumanos() {
   }
 }
 
+function atualizarStatus() {
+  document.getElementById("gorilaVida").textContent = gorilaVida;
+  document.getElementById("humanosRestantes").textContent = humanosRestantes;
+}
+
+function log(mensagem) {
+  const logDiv = document.getElementById("log");
+  logDiv.innerHTML += `<p>${mensagem}</p>`;
+  logDiv.scrollTop = logDiv.scrollHeight;
+}
+
+function salvarEstado() {
+  localStorage.setItem("gorilaVida", gorilaVida);
+  localStorage.setItem("humanos", JSON.stringify(humanos));
+}
