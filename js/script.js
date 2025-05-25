@@ -118,3 +118,14 @@ function atirarVariasBalas() {
     }, i * 300); 
   }
 }
+
+function verificarFimDeJogo() {
+  if (gorilaVida <= 0) {
+    log("O gorila foi derrotado! Fim de jogo.");
+    desativarBotoes();
+  } else if (humanosRestantes <= 0) {
+    log("Todos os humanos foram eliminados! Vitória do gorila!");
+    desativarBotoes();
+  }
+}
+
